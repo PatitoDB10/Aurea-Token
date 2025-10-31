@@ -1,0 +1,16 @@
+{
+  "name": "aurea",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "deploy:polygonMainnet": "npx hardhat run scripts/deploy.js --network polygonMainnet"
+  },
+  "devDependencies": {
+    "hardhat": "^2.17.0",
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "@openzeppelin/contracts": "^4.9.0",
+    "dotenv": "^16.0.0"
+  }
+}
