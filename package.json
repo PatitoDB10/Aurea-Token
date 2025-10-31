@@ -1,16 +1,16 @@
 {
-  "name": "aurea",
-  "version": "0.1.0",
-  "private": true,
+  "name": "aurea-token",
+  "version": "1.0.0",
+  "description": "Smart contract ERC20 para Aurea Token en Polygon",
   "scripts": {
     "compile": "npx hardhat compile",
-    "test": "npx hardhat test",
-    "deploy:polygonMainnet": "npx hardhat run scripts/deploy.js --network polygonMainnet"
+    "deploy:polygon": "npx hardhat run scripts/deploy.js --network polygon",
+    "deploy:mumbai": "npx hardhat run scripts/deploy.js --network polygonMumbai"
   },
-  "devDependencies": {
-    "hardhat": "^2.17.0",
-    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
-    "@openzeppelin/contracts": "^4.9.0",
-    "dotenv": "^16.0.0"
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@openzeppelin/contracts": "^5.0.2",
+    "dotenv": "^16.3.1",
+    "hardhat": "^2.22.2"
   }
 }
