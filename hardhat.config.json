@@ -1,7 +1,12 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
-const { PRIVATE_KEY, POLYGON_RPC_URL, POLYGONSCAN_API_KEY } = process.env;
+const {
+  PRIVATE_KEY,
+  POLYGON_RPC_URL,
+  MUMBAI_RPC_URL,
+  POLYGONSCAN_API_KEY,
+} = process.env;
 
 module.exports = {
   solidity: {
@@ -23,9 +28,9 @@ module.exports = {
       gasPrice: 60000000000, // 60 gwei recomendado
     },
 
-    // ✅ Polygon Amoy Testnet
-    polygonAmoy: {
-      url: "https://rpc-amoy.polygon.technology",
+    // ✅ Polygon Amoy (Mumbai Testnet)
+    polygonMumbai: {
+      url: MUMBAI_RPC_URL || "https://rpc-amoy.polygon.technology",
       accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
       gasPrice: 30000000000, // 30 gwei
     },
