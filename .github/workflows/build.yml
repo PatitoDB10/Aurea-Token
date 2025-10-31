@@ -1,0 +1,41 @@
+name: Construir y Compilar AureaToken
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Clona el repositorio
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      # 2️⃣ Configura Node.js (versión compatible con Hardhat)
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # 3️⃣ Instala dependencias
+      - name: Instalar dependencias
+        run: npm install
+        working-directory: .
+
+      # 4️⃣ Compila los contratos
+      - name: Compilar contratos
+        run: npx hardhat compile
+        working-directory: .
+
+      # 5️⃣ Ejecuta los tests (opcional)
+      - name: Ejecutar tests
+        run: npx hardhat test
+        working-directory: .
+
+      # 6️⃣ Verifica que el proyecto compile sin errores
+      - name: Confirmar compilación exitosa
+        run: echo "✅ Proyecto compilado correctamente"
